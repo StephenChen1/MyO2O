@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>SUI练习</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link href="https://cdn.bootcss.com/light7/0.4.3/css/light7.min.css"
+	rel="stylesheet">
+<link
+	href="https://cdn.bootcss.com/light7/0.4.3/css/light7-swiper.min.css"
+	rel="stylesheet">
+
+
+</head>
+<!-- class="theme-dark" -->
+<body >
+	<div class="page">
+		<header class="bar bar-nav">
+			<a class="button button-link button-nav pull-left" href="/demos/card"
+				data-transition='slide-out'> <span class="icon icon-left"></span>
+				返回
+			</a>
+			<h1 class="title">店铺注册登记</h1>
+		</header>
+		<!-- <nav class="bar bar-tab">
+			<a class="tab-item active" href="#tab1">
+				<span class="icon icon-home"></span>
+				<span class="tab-label">首页</span>
+			</a>
+			<a class="tab-item" href="#tab2">
+				<span class="icon icon-me"></span>
+				<span class="tab-label">我</span>
+			</a>
+			<a class="tab-item" href="#tab3">
+				<span class="icon icon-star"></span>
+				<span class="tab-label">收藏</span>
+			</a>
+			<a class="tab-item" href="#">
+				<span class="icon icon-settings"></span>
+				<span class="tab-label">设置</span>
+			</a>
+		</nav> -->
+		<div class="content-block">
+			<!-- 这里是页面内容区 -->
+			<div class="list-block">
+				<ul>
+					<!-- Text inputs -->
+					<!-- 店铺名 -->
+					<li>
+						<div class="item-content">
+							<div class="item-media">
+								<i class="icon icon-form-name"></i>
+							</div>
+							<div class="item-inner">
+								<div class="item-title label">店铺名</div>
+								<div class="item-input">
+									<input type="text" id="shop-name" placeholder="店铺名称">
+								</div>
+							</div>
+						</div>
+					</li>
+					<!-- 所在区域 -->
+					<li>
+						<div class="item-content">
+							<div class="item-media">
+								<i class="icon icon-form-email"></i>
+							</div>
+							<div class="item-inner">
+								<div class="item-title label">区域</div>
+								<div class="item-input">
+									<select id="shop-area">
+										<!-- <option value="a1">测试区域1</option>
+										<option value="a2">测试区域2</option> -->
+									</select>
+								</div>
+							</div>
+						</div>
+					</li>
+					<!-- 所属类别 -->
+					<li>
+						<div class="item-content">
+							<div class="item-media">
+								<i class="icon icon-form-email"></i>
+							</div>
+							<div class="item-inner">
+								<div class="item-title label">类别</div>
+								<div class="item-input">
+									<select id="shop-category">
+										<!-- <option value="c1">测试类别1</option>
+										<option value="c2">测试类别2</option> -->
+									</select>
+								</div>
+							</div>
+						</div>
+					</li>
+					<!-- 联系方式 -->
+					<li>
+						<div class="item-content">
+							<div class="item-media">
+								<i class="icon icon-form-email"></i>
+							</div>
+							<div class="item-inner">
+								<div class="item-title label">联系方式</div>
+								<div class="item-input">
+									<input type="text" id="shop-phone" placeholder="联系方式">
+								</div>
+							</div>
+						</div>
+					</li>
+					<!-- 店铺门面照 -->
+					<li>
+						<div class="item-content">
+							<div class="item-media">
+								<i class="icon icon-form-password"></i>
+							</div>
+							<div class="item-inner">
+								<div class="item-title label">门面照</div>
+								<div class="item-input">
+									<input type="file" id="shop-img" >
+								</div>
+							</div>
+						</div>
+					</li>
+					<!-- 店铺描述 -->
+					<li>
+						<div class="item-content">
+							<div class="item-media">
+								<i class="icon icon-form-password"></i>
+							</div>
+							<div class="item-inner">
+								<div class="item-title label">店铺描述</div>
+								<div class="item-input">
+									<input type="text" id="shop-desc"placeholder="店铺描述" >
+								</div>
+							</div>
+						</div>
+					</li>
+					<!-- 地址 -->
+					<li class="align-top">
+						<div class="item-content">
+							<div class="item-media">
+								<i class="icon icon-form-comment"></i>
+							</div>
+							<div class="item-inner">
+								<div class="item-title label">详细地址</div>
+								<div class="item-input">
+									<textarea id="shop-address"></textarea>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="content-block">
+				<div class="row">
+					<div class="col-50">
+						<a  id="shop-cancel" class="button button-big button-fill button-danger">取消</a>
+					</div>
+					<div class="col-50">
+						<a id="shop-submit" class="button button-big button-fill button-success">提交</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/light7/0.4.3/js/light7.min.js"></script>
+	<script
+		src="https://cdn.bootcss.com/light7/0.4.3/js/light7-swiper.min.js"></script>
+	<!-- 自定义js文件 -->
+	<script type="text/javascript" src="../resources/js/shop/shopRegister.js"></script>
+
+</body>
+</html>

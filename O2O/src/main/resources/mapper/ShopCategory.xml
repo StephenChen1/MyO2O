@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="stephen.dao.ShopCategoryDao">
+
+	<!--店铺类别映射  -->
+	<resultMap type="stephen.entity.ShopCategory" id="shopCategoryMap">
+		<id column = "id" property = "id"/>
+		<result column = "name" property = "name"/>
+		<result column = "description" property = "description"/>
+		<result column = "img" property = "img"/>
+		<result column = "priority" property = "priority"/>
+		<result column = "create_time" property = "createTime"/>
+		<result column = "last_edit_time" property = "lastEditTime"/>
+		<!-- 根据parent_id得到parent -->
+		<association  property="parent" column = "parent_id"  select = "stephen.dao.ShopCategoryDao.getCategoryById">
+		</association> 
+	</resultMap>
+
+
+	<!-- 根据条件返回店铺类别 -->
+	<select id="queryShopCategory" resultMap="shopCategoryMap">
+		SELECT
+		   id , name , description , img , priority ,parent_id , create_time , last_edit_time
+		FROM
+		  tb_shop_category
+		<where>
+		  <!-- 主要根据参数对象的id和parent来确定得到哪些店铺类别 -->
+		  <!-- 如果传入的参数的id不为空，不管parent是否为空，即返回该id的下一级店铺类型 -->
+		  <if test="shopCategoryCondition.id != null">
+		    and parent_id = #{shopCategoryCondition.id}           
+		  </if>
+		  <!-- 如果传入的参数对象的id为空且parent不为空，则返回二级及以下级别的店铺类型列表 -->
+		  <if test="shopCategoryCondition.id == null and shopCategoryCondition.parent != null">
+		    and parent_id is not null 
+		  </if> 
+		  <!-- 如果传入的参数对象的id为空且parent也为空，则返回一级店铺列表 -->
+		  <if test="shopCategoryCondition.id == null and shopCategoryCondition.parent == null">
+		    and parent_id is null 
+		  </if>  
+		</where>
+		ORDER BY 
+		    priority
+		DESC 
+	</select>
+
+
+	<!-- 只用于得到店铺类别的父类别对象，根据id的值（在dao没有此方法接口）   待优化,貌似可以由queryShopCategory方法即可搞定   TODO -->
+	<select id="getCategoryById" resultType="stephen.entity.ShopCategory">
+		SELECT
+		   id , name , description , img , priority , parent_id , create_time , last_edit_time
+		FROM
+		  tb_shop_category
+		<!--  WHERE id = #{id}  -->
+		<where>
+			<!--  传进来的id不为空的话，就返回该id对应的店铺类别，否则返回null 
+			 注意不要出现列名和传进来的参数名相同，否则会报错  -->
+			 <!-- 不知为何，这里要用_parameter来表示，不能用pid -->
+		    <if test="_parameter != null ">
+		    	and id = #{pid}
+		    </if>
+		    <if test="_parameter == null">
+		    	and 1 = 2
+		    </if>
+		</where> 
+	    <!-- WHERE id = #{id} -->
+	</select>
+	
+</mapper>

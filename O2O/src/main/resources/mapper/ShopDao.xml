@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="stephen.dao.ShopDao">
+
+	<!-- 插入店铺，并得到店铺id -->
+	<insert id="insertShop" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+		insert into tb_shop
+		  	(owner_id,area_id,shop_category_id,img,name,description,phone,address,
+		  	 priority,enable_status,create_time,last_edit_time,advice   )
+		values
+			(#{owner.userId},#{area.id},#{shopCategory.id},#{img},#{name},#{desc},#{phone},#{address},
+		 	#{priority},#{enableStatus},#{createTime},#{lastEditTime},#{advice})
+	</insert>
+
+	<!-- 更新店铺 -->
+	<update id="updateShop">
+		update tb_shop
+		<set>
+			<if test="img != null">img = #{img},</if>
+			<if test="name != null">name = #{name},</if>
+			<if test="description != null">description = #{description},</if>
+			<if test="phone != null">phone = #{phone},</if>
+			<if test="address != null">address = #{address},</if>
+			<if test="priority != null">priority = #{priority},</if>
+			<if test="enableStatus != null">enable_status = #{enableStatus},</if>
+			<if test="lastEditTime != null">last_edit_time = #{lastEditTime},</if>
+			<if test="advice != null">advice = #{advice},</if>
+			<if test="area != null">area_id = #{area.id},</if>
+			<if test="shopCategory != null">shop_category_id = #{shopCategory.id},</if>
+		</set>
+	    where id = #{id}
+	</update>
+	
+
+</mapper>
