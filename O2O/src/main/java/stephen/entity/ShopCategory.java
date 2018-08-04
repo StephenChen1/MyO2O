@@ -1,10 +1,16 @@
 package stephen.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-//店铺类别
-public class ShopCategory {
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion;
 
+//店铺类别
+public class ShopCategory implements Serializable{
+
+	
+	private static final long serialVersionUID = 4204968394193672466L;
 	//类别id
 	private Long id ;
 	//类别名称
@@ -19,7 +25,7 @@ public class ShopCategory {
 	private Date createTime ;
 	//更新时间
 	private Date lastEditTime ;
-	//关联上级类别,全部类别均在一个表，当parent为空时，说明是顶级类别
+	//关联上级类别,全部类别均在一个表，当parent为空时，说明是顶级类别 
 	private ShopCategory parent ;
 	public Long getId() {
 		return id;

@@ -3,6 +3,7 @@ package stephen.service.impl;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
@@ -15,6 +16,7 @@ import stephen.service.ShopService;
 import stephen.util.ImageUtil;
 import stephen.util.PathUtil;
 
+@Service
 public class ShopServiceImpl implements ShopService {
 
 	@Autowired
@@ -37,6 +39,7 @@ public class ShopServiceImpl implements ShopService {
 		try{
 			//不为空则给shop初始一些信息
 			shop.setEnableStatus(0);//店铺初始状态为0，表示待审核
+			shop.setPriority(20);//店铺初始权重暂时先均为20
 			shop.setCreateTime(new Date());
 			shop.setLastEditTime(new Date());
 			//往数据库插入该店铺信息,影响行数存于effectedNum，店铺id存于shop对象
@@ -45,15 +48,16 @@ public class ShopServiceImpl implements ShopService {
 			if(effectedNum <= 0){
 				throw new ShopOperationException("店铺提交失败");
 			}else{//添加成功
-		
+				System.out.println("添加店铺数据成功");
 				if(shopImg != null){
 					//调用方法将该图片存储到机器上,并得到存储路径
 					try{
 						addShopImg(shop,shopImg);
 					}catch(Exception e){
+						//System.out.println("添加图片异常");
 						//抛出异常
 						throw new ShopOperationException("add shopImg error!"+e.getMessage());
-					}
+					}           
 					//更新数据库该店铺的图片字段
 					effectedNum = shopDao.updateShop(shop);
 					if(effectedNum <= 0){
@@ -73,10 +77,14 @@ public class ShopServiceImpl implements ShopService {
 	
 	//保存图片到机器上
 	private void addShopImg(Shop shop , CommonsMultipartFile shopImg){
+		System.out.println("先得到目的地址");
 		//根据shopId获取店铺存储相对值路径
 		String dest = PathUtil.getShopImagePath(shop.getId());
-		//将该图片写到机器
-		ImageUtil.generateThumbnail(shopImg, dest);
+		System.out.println("dest:"+dest);
+		//将该图片写到机器，得到返回的字符串即图片的相对存储路径（包括文件扩展名）
+		String imgRelativePath = ImageUtil.generateThumbnail(shopImg, dest);
+		//将图片地址存进shop，在调用函数那会更新数据库的该字段
+		shop.setImg(imgRelativePath);
 	}
 
 }

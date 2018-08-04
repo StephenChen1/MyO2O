@@ -31,7 +31,7 @@ public class ShopServiceTest extends BaseTest {
 		
 		shop.setArea(area);
 		shop.setShopCategory(shopCategory);
-		shop.setOwner(owner);
+		shop.setOwnerId(10L);
 		
 		shop.setName("测试店铺5");
 		shop.setDescription("测试店铺描述5");

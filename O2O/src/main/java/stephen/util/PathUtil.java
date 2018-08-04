@@ -1,9 +1,13 @@
 package stephen.util;
 
+import java.io.File;
+
 public class PathUtil {
 
-	
-	private static String seperator = System.getProperty("file.seperator");
+	//得到系统分隔符
+	//private static String seperator = File.separator;
+	//下面的方法也行
+	private static String seperator = System.getProperty("file.separator");
 	//System.out.println("seperator:" + seperator );
 	
 	//得到基地址
@@ -24,10 +28,10 @@ public class PathUtil {
 		return basePath ;
 	}
 	
-	//得到店铺图片路径
+	//得到店铺图片相对路径，主要是加入店铺id作为路径
 	public static String getShopImagePath(long shopId){
-		
-		String imagePath = "/upload/item/shop/"+ shopId +"/";
+		//System.out.println("系统分隔符："+ seperator);
+		String imagePath = "/upload/images/item/shop/"+ shopId +"/";
 		return imagePath.replace("/", seperator);
 	}
 }

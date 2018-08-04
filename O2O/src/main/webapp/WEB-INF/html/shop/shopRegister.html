@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>SUI练习</title>
+<title>我的店铺注册</title>
 <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -18,7 +18,7 @@
 </head>
 <!-- class="theme-dark" -->
 <body >
-	<div class="page">
+	<!-- <div class="page"> -->
 		<header class="bar bar-nav">
 			<a class="button button-link button-nav pull-left" href="/demos/card"
 				data-transition='slide-out'> <span class="icon icon-left"></span>
@@ -44,7 +44,7 @@
 				<span class="tab-label">设置</span>
 			</a>
 		</nav> -->
-		<div class="content-block">
+		<div class="content">
 			<!-- 这里是页面内容区 -->
 			<div class="list-block">
 				<ul>
@@ -132,7 +132,7 @@
 								<i class="icon icon-form-password"></i>
 							</div>
 							<div class="item-inner">
-								<div class="item-title label">店铺描述</div>
+								<div class="item-title label">店铺简介</div>
 								<div class="item-input">
 									<input type="text" id="shop-desc"placeholder="店铺描述" >
 								</div>
@@ -153,6 +153,22 @@
 							</div>
 						</div>
 					</li>
+					<!-- 验证码 -->
+					<li>
+						<div class="item-content">
+							<div class="item-media">
+								<i class="icon icon-form-password"></i>
+							</div>
+							<div class="item-inner">
+								<div class="item-title label">验证码</div>
+								<input type="text" id="verifyCodeInput" placeholder="验证码" >
+								<div class="item-input">
+									
+									<img id = "Kaptcha-img" alt="点击更换" onclick = "changeVerifyCode(this)" src="../Kaptcha">
+								</div>
+							</div>
+						</div>
+					</li>
 				</ul>
 			</div>
 			<div class="content-block">
@@ -166,7 +182,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	<!-- </div> page-->
 
 	<script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
 	<script src="https://cdn.bootcss.com/light7/0.4.3/js/light7.min.js"></script>
@@ -174,6 +190,7 @@
 		src="https://cdn.bootcss.com/light7/0.4.3/js/light7-swiper.min.js"></script>
 	<!-- 自定义js文件 -->
 	<script type="text/javascript" src="../resources/js/shop/shopRegister.js"></script>
+	<script type="text/javascript" src="../resources/js/common/common.js"></script>
 
 </body>
 </html>

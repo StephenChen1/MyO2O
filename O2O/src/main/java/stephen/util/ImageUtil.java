@@ -14,7 +14,7 @@ import net.coobird.thumbnailator.geometry.Positions;
 
 public class ImageUtil {
 
-	//得到classpath路径
+	//得到classpath路径,用于得到水印
 	private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
 	//时间格式，做文件名用
 	private static final SimpleDateFormat sDFormat = new SimpleDateFormat("yyyyMMddHHmmss");
@@ -23,7 +23,8 @@ public class ImageUtil {
 	
 	
 	//将图片输入流thumbnail的内容加上水印，然后输出到  基路径+targetAddr+随机文件名+扩展名  这个全路径下
-	public static boolean generateThumbnail(CommonsMultipartFile thumbnail,String targetAddr){
+	//返回值为图片存储的相对路径，存储出错返回空
+	public static String generateThumbnail(CommonsMultipartFile thumbnail,String targetAddr){
 		//文件名，一个随机数
 		String realFileName = getRandomFileName();
 		//扩展名，即后缀
@@ -40,9 +41,9 @@ public class ImageUtil {
 			.outputQuality(0.8f).toFile(dest);
 		}catch(Exception e){
 			e.printStackTrace();
-			return false ;
+			return null ;
 		}
-		return true ;
+		return relativeAddr ;
 	}
 	
 	//构造随机数作为图片文件名
@@ -79,7 +80,7 @@ public class ImageUtil {
 	}
 	
 	
-	public static void main(String[] args) throws Exception{
+	/*public static void main(String[] args) throws Exception{
 		//得到当前线程的资源路径，也就是classpath，也是项目的resources目录
 		String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
 		Thumbnails.of(new File("E:/o2o/image/test.png")).size(200, 200)
@@ -87,6 +88,6 @@ public class ImageUtil {
 		.outputQuality(0.8f).toFile("E:/o2o/image/test2.png");
 		//Thumbnails.of(new File(basePath + "myimg.png")).size(20, 20)
 		//.outputQuality(1.0f).toFile("E:/o2o/image/test3.png");
-	}
+	}*/
 	
 }

@@ -50,6 +50,7 @@ public class HttpServletRequestUtil {
 			try{
 				//根据key得到值
 				String result = request.getParameter(key);
+				//System.out.println("result:" + result);
 				if(result != null){
 					//若结果不为空，则去掉两边的空格
 					result = result.trim();

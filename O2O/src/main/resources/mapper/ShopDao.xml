@@ -10,7 +10,7 @@
 		  	(owner_id,area_id,shop_category_id,img,name,description,phone,address,
 		  	 priority,enable_status,create_time,last_edit_time,advice   )
 		values
-			(#{owner.userId},#{area.id},#{shopCategory.id},#{img},#{name},#{desc},#{phone},#{address},
+			(#{ownerId},#{area.id},#{shopCategory.id},#{img},#{name},#{description},#{phone},#{address},
 		 	#{priority},#{enableStatus},#{createTime},#{lastEditTime},#{advice})
 	</insert>
 

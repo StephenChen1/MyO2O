@@ -28,8 +28,8 @@ public class Shop {
 	private String advice ;
 	//所在区域
 	private Area area ;
-	//店主（也在用户表中）
-	private PersonInfo owner ;
+	//店主（也在用户表中,由原本的PersonInfo owner对象改成long ownerId）
+	private Long ownerId ;
 	//所属店铺类型
 	private ShopCategory shopCategory ;
 	public Long getId() {
@@ -105,11 +105,12 @@ public class Shop {
 	public void setArea(Area area) {
 		this.area = area;
 	}
-	public PersonInfo getOwner() {
-		return owner;
+	
+	public Long getOwnerId() {
+		return ownerId;
 	}
-	public void setOwner(PersonInfo owner) {
-		this.owner = owner;
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
 	}
 	public ShopCategory getShopCategory() {
 		return shopCategory;

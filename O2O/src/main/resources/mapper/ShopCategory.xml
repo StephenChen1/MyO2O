@@ -13,7 +13,7 @@
 		<result column = "priority" property = "priority"/>
 		<result column = "create_time" property = "createTime"/>
 		<result column = "last_edit_time" property = "lastEditTime"/>
-		<!-- 根据parent_id得到parent -->
+		<!-- 根据parent_id得到parent -全局已设置为延迟加载，即用到才会加载   fetchType="eager"-->
 		<association  property="parent" column = "parent_id"  select = "stephen.dao.ShopCategoryDao.getCategoryById">
 		</association> 
 	</resultMap>

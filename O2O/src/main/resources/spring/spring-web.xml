@@ -10,7 +10,15 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
   <!-- 开启MVC注解模式 -->
-  <mvc:annotation-driven/>
+  <mvc:annotation-driven>
+  		<mvc:message-converters>
+            <!-- 用自定义 ObjectMapper 代替官方objectMapper，解决mybatis懒加载出现的异常-->
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper" ref ="jacksonObjectMapper">
+                </property>
+            </bean>
+        </mvc:message-converters>
+  </mvc:annotation-driven>
   
   <!-- 对静态资源的处理？，之前的项目没有这句，现在也先不要这句 -->
   <!-- 说是告诉dispacterServlet不要拦截以resouces开头的请求？ -->
@@ -24,6 +32,18 @@
      <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
      <property name="prefix" value="/WEB-INF/html/"></property>
      <property name="suffix" value=".html"></property>
+  </bean>
+  
+  <!-- 配置文件流解析器，由于在注册店铺时有字符串还有文件，因此没配置这个用request不起效 -->
+  <bean id = "multipartResolver" class = "org.springframework.web.multipart.commons.CommonsMultipartResolver">
+  	<property name="defaultEncoding" value = "utf-8"></property>
+  	<!-- 最大上传文件容量(字节表示） 1024*1024*20 = 20M -->
+  	<property name="maxUploadSize" value = "20971520"></property>
+  	<property name="maxInMemorySize" value = "20971520"></property>
+  </bean>
+  
+  <!-- 配置自定义的mapper，解决懒加载出现的异常问题 -->
+  <bean id = "jacksonObjectMapper" class = "stephen.util.CustomerMapper">
   </bean>
   
   <!-- 扫描web相关的包，类似于service的配置 -->

@@ -11,14 +11,14 @@ function getShopInitInfo(url){
     	url  : url,
     	success:function(result){
     		//将数据展示到下拉框
-    		alert("得到数据");
+    		//alert("得到数据");
     		if(result.success){
     			//先把下拉框清空
     			$("#shop-area").find("option").remove();
     			//区域下拉框,遍历result中的areaList,item为值，index为下标
     			result.areaList.map(function(item,index){
     				//构造选项字符串
-    				var areaOption = "<option value='"+item.id+"'>"+item.name+"</option>";
+    				var areaOption = "<option data-id='"+item.id+"'>"+item.name+"</option>";
     				//添加进下拉框
     				$("#shop-area").append(areaOption);
     			})
@@ -29,12 +29,12 @@ function getShopInitInfo(url){
     			//遍历result中的shopCategoryList,输出到下拉框
     			result.shopCategoryList.map(function(item,index){
     				//构造选项字符串
-    				var shopCategoryOption = "<option value='"+item.id+"'>"+item.name+"</option>";
+    				var shopCategoryOption = "<option data-id='"+item.id+"'>"+item.name+"</option>";
     				//添加进下拉框
     				$("#shop-category").append(shopCategoryOption);
     			})
     		}else{
-    			alert("获取初始出错");
+    			$.toast("获取初始出错");
     		}
     	}
 		
@@ -60,33 +60,58 @@ $(document).ready(function(){
 	
 	//店铺提交按钮点击事件
 	$("#shop-submit").click(function(){
+		//获取输入的验证码，不为空则继续
+		var verifyCodeInput = $("#verifyCodeInput").val();
+		if(!verifyCodeInput){
+			//空的话提示用户输入验证码
+			$.toast("未输入验证码");
+			return ;
+		}
 		//定义商店对象存储商店信息（除了照片）
-		var shop = new Object();
-		
+		var shop = {};
+		alert("提交");
 		//得到店铺名
 		shop.name = $("#shop-name").val();
+		alert(shop.name);
 		//区域
-		shop.area = $("#shop-area").val();
+		//shop.area = $("#shop-area").val();alert(shop.area);
+		//这里得到的是一个Area对象，其中一个属性时id
+		shop.area = {
+				id : $('#shop-area').find('option').not(function() {
+					return !this.selected;
+				}).data('id')
+			};
 		//类别
-		shop.category = $("#shop-category").val();
+		//shop.category = $("#shop-category").val();alert(shop.category);
+		shop.shopCategory = {
+				id : $('#shop-category').find('option').not(function() {
+					return !this.selected;
+				}).data('id')
+			};
 		//联系方式
 		shop.phone = $("#shop-phone").val();
 		//描述
-		shop.desc = $("#shop-desc").val();
+		shop.description = $("#shop-desc").val();
 		//地址
 		shop.address = $("#shop-address").val();
 		//门面照
 		var img = $("#shop-img")[0].files[0];
 		//alert("img:"+img.length);
+		
 		//定义formdata来做提交数据的载体
 		var formdata = new FormData();
 		//将shop插进formdata
 		formdata.append("shopStr",JSON.stringify(shop));
+		//验证码
+		formdata.append("verifyCodeInput",verifyCodeInput);
 		//将图片流也插进去
-		formdata.append("img",img);
+		formdata.append("shopImg",img);
+		//alert("shopStr:" + JSON.stringify(shop));
+		//alert(formdata);
+		//alert(shop.desc);
 		//从后台获取所有会议室详情
 		$.ajax({
-	    	type : "post",
+	    	type : "POST",
 	    	url:registerShopUrl,
 	    	data:formdata,
 	    	//由于既传文件，又传文字，因此contentType设为false
