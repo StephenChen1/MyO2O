@@ -9,7 +9,7 @@ import stephen.entity.ShopCategory;
 public interface ShopCategoryDao {
 
 	/**
-	 * 根据shopCategory的条件得到所需店铺类别
+	 * 根据shopCategory的条件得到所需店铺类别,主要用于查询得到多个店铺类别的情况
 	 * @param shopCategoryCondition
 	 * @return
 	 */

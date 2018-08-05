@@ -9,10 +9,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/shopUI")
 public class ShopUIController {
 
-	@RequestMapping(value="register", method=RequestMethod.GET)
+	@RequestMapping(value="/shopInfoOperation", method=RequestMethod.GET)
 	public String register(){
 		//返回店铺注册登记界面
-		return "shop/shopRegister";
+		return "shop/shopInfoOperation";
+	}
+	
+	@RequestMapping(value="/shopList", method=RequestMethod.GET)
+	public String shopList(){
+		//返回店铺注册登记界面
+		return "shop/shopList";
+	}
+	
+	
+	@RequestMapping(value="/shopOperation", method=RequestMethod.GET)
+	public String shopOperation(){
+		//返回店铺注册登记界面
+		return "shop/shopOperation";
 	}
 	
 }

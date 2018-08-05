@@ -1,12 +1,11 @@
 package service;
 
-import java.io.File;
-
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import commom.BaseTest;
+import stephen.dto.ShopExecution;
 import stephen.entity.Area;
 import stephen.entity.PersonInfo;
 import stephen.entity.Shop;
@@ -19,6 +18,7 @@ public class ShopServiceTest extends BaseTest {
 	private ShopService shopService ;
 	
 	@Test
+	@Ignore
 	public void testAddShop(){
 		Shop shop = new Shop();
 		
@@ -43,4 +43,30 @@ public class ShopServiceTest extends BaseTest {
 		//CommonsMultipartFile file = new CommonsMultipartFile(new File("E:/o2o/image/test.png"));
 	}
 	
+	
+	@Test
+	@Ignore
+	public void testGetShopById(){
+		Long shopId = 18L;
+		ShopExecution s = shopService.getShopById(shopId);
+		System.out.println(s.getStateInfo());
+		System.out.println(s.getShop().getName());
+	}
+	
+	
+	
+	@Test
+	public void testGetShopList(){
+		
+		Shop shopCondition = new Shop();
+		shopCondition.setOwnerId(8L);
+		int pageIndex = 1 ;
+		int pageSize = 30 ;
+		ShopExecution shopExecution = shopService.getShopList(shopCondition, pageIndex, pageSize);
+		if(shopExecution.getState() == 1){
+			System.out.println(shopExecution.getStateInfo());
+			System.out.println(shopExecution.getShopList().size());
+		}
+	}
+
 }

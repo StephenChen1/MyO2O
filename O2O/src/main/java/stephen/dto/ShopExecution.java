@@ -13,7 +13,7 @@ public class ShopExecution {
 	//状态标识
 	private String stateInfo ;
 	
-	//店铺数量
+	//店铺总数量（不只list中那么多）
 	private int count ;
 	
 	//操作的店铺
@@ -38,8 +38,6 @@ public class ShopExecution {
 		this.state = stateEnum.getState();
 		this.stateInfo = stateEnum.getStateInfo();
 		this.shop = shop ;
-		//赋值count
-		this.count = 1;
 	}
 	
 	//店铺操作成功时构造方法，多个店铺的情况
@@ -47,24 +45,28 @@ public class ShopExecution {
 		this.state = stateEnum.getState();
 		this.stateInfo = stateEnum.getStateInfo();
 		this.shopList = shopList ;
-		//赋值count
-		this.count = shopList.size();
+		
 	}
 
 	public int getState() {
 		return state;
 	}
 
+	/*//不给单独设置状态
 	public void setState(int state) {
 		this.state = state;
 	}
-
-	public String getStateInfo() {
-		return stateInfo;
-	}
-
+	//不给单独设置状态信息，只能传入枚举类型同时设置状态和状态信息
 	public void setStateInfo(String stateInfo) {
 		this.stateInfo = stateInfo;
+	}*/
+	public void setStateAndInfo(ShopStateEnum stateEnum){
+		this.state = stateEnum.getState();
+		this.stateInfo = stateEnum.getStateInfo();
+	}
+	
+	public String getStateInfo() {
+		return stateInfo;
 	}
 
 	public int getCount() {

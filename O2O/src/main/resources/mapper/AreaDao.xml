@@ -9,4 +9,13 @@
 		select * from tb_area;
 	</select>
 
+	<!-- 根据id返回该区域信息 -->
+	<select id="getAreaById" resultType = "area">
+	   SELECT
+	   	   id, name, description, create_time, last_edit_time
+	   FROM
+	       tb_area
+	   WHERE 
+	       id = #{areaId}
+	</select>
 </mapper>

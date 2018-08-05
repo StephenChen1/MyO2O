@@ -18,7 +18,7 @@
 </head>
 <!-- class="theme-dark" -->
 <body >
-	<!-- <div class="page"> -->
+	 <div class="page">
 		<header class="bar bar-nav">
 			<a class="button button-link button-nav pull-left" href="/demos/card"
 				data-transition='slide-out'> <span class="icon icon-left"></span>
@@ -120,10 +120,16 @@
 							<div class="item-inner">
 								<div class="item-title label">门面照</div>
 								<div class="item-input">
-									<input type="file" id="shop-img" >
+									<input type="file" id="shop-img" onchange="preview(this)">
+								</div>
+								<div class="item-input">
+									<!-- 显示服务器上的图片 -->
+									<!-- <img id="shop-img1" src="/upload/images/item/shop/43/2018080400463380190.jpg"/> -->
+									<!-- 显示本地选中的图片 宽高TODO  50px刚好-->
+									<img id="shop-img1" width="50px" height="50px" src=""/>
 								</div>
 							</div>
-						</div>
+						</div>           
 					</li>
 					<!-- 店铺描述 -->
 					<li>
@@ -182,7 +188,7 @@
 				</div>
 			</div>
 		</div>
-	<!-- </div> page-->
+	 </div> 
 
 	<script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
 	<script src="https://cdn.bootcss.com/light7/0.4.3/js/light7.min.js"></script>

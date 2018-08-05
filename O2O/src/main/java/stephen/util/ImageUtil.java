@@ -79,6 +79,48 @@ public class ImageUtil {
 		}
 	}
 	
+	//删除文件或目录
+	public static boolean deleteImgOrPath(String path){
+		boolean success = false ;
+		//基地址加上 参数（相对地址）成为绝对路径地址
+		File fileOrPath = new File(PathUtil.getImgBasePath() + path);
+		//判断是否存在
+		if(fileOrPath.exists()){
+			if(fileOrPath.isFile()){
+				//是文件直接删除
+				success = fileOrPath.delete();
+			}else if(fileOrPath.isDirectory()){
+				//判断是目录，则递归删除里面的文件及文件夹
+				success = deleteDir(fileOrPath);
+			}
+		}
+		
+		return success ;
+		
+	}
+	
+	
+	//删除文件夹
+	private static boolean deleteDir(File dir){
+		//如果参数非空或不存在或不是目录
+		if(dir == null || !dir.exists() || !dir.isDirectory()){
+			return false ;
+		}
+		File[] files = dir.listFiles();
+		//遍历
+		for(File file : files){
+			//若是文件直接删除
+			if(file.isFile()){
+				file.delete();
+			}else if(file.isDirectory()){
+				//若是目录递归删除
+				deleteDir(file);
+			}
+		}
+		
+		return true ;
+	}
+	
 	
 	/*public static void main(String[] args) throws Exception{
 		//得到当前线程的资源路径，也就是classpath，也是项目的resources目录
@@ -89,5 +131,6 @@ public class ImageUtil {
 		//Thumbnails.of(new File(basePath + "myimg.png")).size(20, 20)
 		//.outputQuality(1.0f).toFile("E:/o2o/image/test3.png");
 	}*/
+	
 	
 }

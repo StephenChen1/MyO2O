@@ -1,106 +1,68 @@
-2018-08-03 12:36:13.679 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ==>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:36:13.805 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ==> Parameters: 10(Long)
-2018-08-03 12:36:13.849 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <==      Total: 1
-2018-08-03 12:39:57.736 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ==>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:39:57.792 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ==> Parameters: 10(Long)
-2018-08-03 12:39:58.048 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <==      Total: 1
-2018-08-03 12:41:02.861 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ==>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE 1 = 2 
-2018-08-03 12:41:02.903 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ==> Parameters: 
-2018-08-03 12:41:02.950 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <==      Total: 0
-2018-08-03 12:41:44.397 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ==>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE 1 = 2 
-2018-08-03 12:41:44.447 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ==> Parameters: 
-2018-08-03 12:41:44.485 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <==      Total: 0
-2018-08-03 12:46:26.700 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT id , name , description , img , priority ,parent_id, create_time , last_edit_time FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
-2018-08-03 12:46:26.740 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2018-08-03 12:52:46.887 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT id , name , description , img , priority ,parent_id, create_time , last_edit_time FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
-2018-08-03 12:52:46.933 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2018-08-03 12:52:46.984 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:52:46.985 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 10(Integer)
-2018-08-03 12:52:46.995 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:52:47.007 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:52:47.007 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 11(Integer)
-2018-08-03 12:52:47.015 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:52:47.018 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:52:47.018 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 12(Integer)
-2018-08-03 12:52:47.026 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:52:47.028 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:52:47.028 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 13(Integer)
-2018-08-03 12:52:47.036 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:52:47.039 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:52:47.040 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 27(Integer)
-2018-08-03 12:52:47.047 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:52:47.053 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:52:47.055 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 28(Integer)
-2018-08-03 12:52:47.064 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:52:47.065 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - <==      Total: 12
-2018-08-03 12:55:17.085 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT id , name , description , img , priority ,parent_id, create_time , last_edit_time FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
-2018-08-03 12:55:17.128 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2018-08-03 12:55:17.175 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:55:17.176 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 10(Integer)
-2018-08-03 12:55:17.187 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:55:17.203 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:55:17.204 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 11(Integer)
-2018-08-03 12:55:17.212 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:55:17.214 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:55:17.215 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 12(Integer)
-2018-08-03 12:55:17.224 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:55:17.226 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:55:17.227 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 13(Integer)
-2018-08-03 12:55:17.235 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:55:17.237 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:55:17.239 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 27(Integer)
-2018-08-03 12:55:17.247 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:55:17.254 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:55:17.254 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 28(Integer)
-2018-08-03 12:55:17.263 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:55:17.264 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - <==      Total: 12
-2018-08-03 12:55:54.637 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT id , name , description , img , priority ,parent_id, create_time , last_edit_time FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
-2018-08-03 12:55:54.671 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2018-08-03 12:55:54.721 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:55:54.722 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 10(Integer)
-2018-08-03 12:55:54.731 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:55:54.749 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:55:54.750 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 11(Integer)
-2018-08-03 12:55:54.758 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:55:54.762 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:55:54.763 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 12(Integer)
-2018-08-03 12:55:54.774 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:55:54.777 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:55:54.778 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 13(Integer)
-2018-08-03 12:55:54.787 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:55:54.790 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:55:54.790 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 27(Integer)
-2018-08-03 12:55:54.799 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:55:54.807 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 12:55:54.810 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 28(Integer)
-2018-08-03 12:55:54.818 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 12:55:54.819 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - <==      Total: 12
-2018-08-03 13:03:08.662 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT id , name , description , img , priority ,parent_id as pid, create_time , last_edit_time FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
-2018-08-03 13:03:08.706 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2018-08-03 13:05:24.386 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT id , name , description , img , priority ,parent_id , create_time , last_edit_time FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
-2018-08-03 13:05:24.428 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2018-08-03 13:05:24.479 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 13:05:24.480 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 10(Integer)
-2018-08-03 13:05:24.490 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 13:05:24.500 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 13:05:24.500 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 11(Integer)
-2018-08-03 13:05:24.508 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 13:05:24.510 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 13:05:24.511 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 12(Integer)
-2018-08-03 13:05:24.519 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 13:05:24.522 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 13:05:24.522 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 13(Integer)
-2018-08-03 13:05:24.530 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 13:05:24.532 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 13:05:24.533 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 27(Integer)
-2018-08-03 13:05:24.542 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 13:05:24.547 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 13:05:24.548 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ====> Parameters: 28(Integer)
-2018-08-03 13:05:24.556 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <====      Total: 1
-2018-08-03 13:05:24.558 [main] DEBUG stephen.dao.ShopCategoryDao.queryShopCategory - <==      Total: 12
-2018-08-03 13:05:57.789 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ==>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 13:05:57.831 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ==> Parameters: null
-2018-08-03 13:05:57.874 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <==      Total: 0
-2018-08-03 13:06:24.260 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ==>  Preparing: SELECT id , name , description , img , priority , parent_id , create_time , last_edit_time FROM tb_shop_category WHERE id = ? 
-2018-08-03 13:06:24.301 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - ==> Parameters: 10(Long)
-2018-08-03 13:06:24.352 [main] DEBUG stephen.dao.ShopCategoryDao.getCategoryById - <==      Total: 1
+2018-08-05 20:09:51.364 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE ownerId = ? ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:09:51.453 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 20(Integer)
+2018-08-05 20:10:43.836 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:10:43.953 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 20(Integer)
+2018-08-05 20:10:44.182 [main] DEBUG stephen.dao.ShopDao.queryShopList - <==      Total: 20
+2018-08-05 20:12:10.419 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:12:10.487 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 20(Integer)
+2018-08-05 20:12:10.739 [main] DEBUG stephen.dao.ShopDao.queryShopList - <==      Total: 20
+2018-08-05 20:12:32.004 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:12:32.046 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 50(Integer)
+2018-08-05 20:12:32.270 [main] DEBUG stephen.dao.ShopDao.queryShopList - <==      Total: 24
+2018-08-05 20:13:23.256 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:13:23.324 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 50(Integer)
+2018-08-05 20:13:23.561 [main] DEBUG stephen.dao.ShopDao.queryShopList - <==      Total: 24
+2018-08-05 20:14:59.230 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:14:59.305 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 50(Integer)
+2018-08-05 20:14:59.529 [main] DEBUG stephen.dao.ShopDao.queryShopList - <==      Total: 24
+2018-08-05 20:15:40.417 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:15:40.460 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 50(Integer)
+2018-08-05 20:15:40.676 [main] DEBUG stephen.dao.ShopDao.queryShopList - <==      Total: 24
+2018-08-05 20:15:40.693 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop WHERE owner_id = ? 
+2018-08-05 20:15:40.694 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==> Parameters: 8(Long)
+2018-08-05 20:16:45.929 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:16:45.982 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 50(Integer)
+2018-08-05 20:16:46.216 [main] DEBUG stephen.dao.ShopDao.queryShopList - <==      Total: 24
+2018-08-05 20:16:46.233 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop WHERE owner_id = ? 
+2018-08-05 20:16:46.234 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==> Parameters: 8(Long)
+2018-08-05 20:16:46.242 [main] DEBUG stephen.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-08-05 20:17:47.033 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? and name like '%?%' ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:20:36.354 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:20:36.411 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 3(Integer), 10(Integer)
+2018-08-05 20:20:36.598 [main] DEBUG stephen.dao.ShopDao.queryShopList - <==      Total: 10
+2018-08-05 20:20:36.611 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop WHERE owner_id = ? 
+2018-08-05 20:20:36.612 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==> Parameters: 8(Long)
+2018-08-05 20:20:36.619 [main] DEBUG stephen.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-08-05 20:24:10.177 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? and area_id= ? ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:24:10.252 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 4(Long), 3(Integer), 10(Integer)
+2018-08-05 20:24:10.454 [main] DEBUG stephen.dao.ShopDao.queryShopList - <==      Total: 4
+2018-08-05 20:24:10.465 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop WHERE owner_id = ? and area_id= ? 
+2018-08-05 20:24:10.466 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==> Parameters: 8(Long), 4(Long)
+2018-08-05 20:24:10.473 [main] DEBUG stephen.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-08-05 20:28:02.186 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? and area_id= ? ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:28:02.232 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 4(Long), 0(Integer), 10(Integer)
+2018-08-05 20:28:02.467 [main] DEBUG stephen.dao.ShopDao.queryShopList - <==      Total: 7
+2018-08-05 20:28:02.478 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop WHERE owner_id = ? and area_id= ? 
+2018-08-05 20:28:02.479 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==> Parameters: 8(Long), 4(Long)
+2018-08-05 20:28:02.486 [main] DEBUG stephen.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-08-05 20:28:23.992 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? and name like '%?%' ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:34:12.628 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? and name like concat('%',?,'%') ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:34:12.685 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 奶茶(String), 0(Integer), 10(Integer)
+2018-08-05 20:34:12.854 [main] DEBUG stephen.dao.ShopDao.queryShopList - <==      Total: 2
+2018-08-05 20:34:12.867 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop WHERE owner_id = ? and name like '%?%' 
+2018-08-05 20:37:39.624 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? and name like concat('%',?,'%') ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:37:39.689 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 奶茶(String), 0(Integer), 10(Integer)
+2018-08-05 20:37:39.869 [main] DEBUG stephen.dao.ShopDao.queryShopList - <==      Total: 2
+2018-08-05 20:37:39.880 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop WHERE owner_id = ? and name like '%?%' 
+2018-08-05 20:39:06.755 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? and name like concat('%',?,'%') ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:39:06.825 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 奶茶(String), 0(Integer), 10(Integer)
+2018-08-05 20:39:06.989 [main] DEBUG stephen.dao.ShopDao.queryShopList - <==      Total: 2
+2018-08-05 20:39:07.000 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop WHERE owner_id = ? and name like concat('%',?,'%') 
+2018-08-05 20:39:07.001 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==> Parameters: 8(Long), 奶茶(String)
+2018-08-05 20:39:07.008 [main] DEBUG stephen.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-08-05 20:45:21.152 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==>  Preparing: SELECT id, name, img, description, address, phone, create_time, advice, enable_status, priority, last_edit_time, owner_id, area_id, shop_category_id FROM tb_shop WHERE owner_id = ? ORDER BY priority DESC LIMIT ?,? 
+2018-08-05 20:45:21.227 [main] DEBUG stephen.dao.ShopDao.queryShopList - ==> Parameters: 8(Long), 0(Integer), 30(Integer)
+2018-08-05 20:45:21.458 [main] DEBUG stephen.dao.ShopDao.queryShopList - <==      Total: 24
+2018-08-05 20:45:21.473 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop WHERE owner_id = ? 
+2018-08-05 20:45:21.474 [main] DEBUG stephen.dao.ShopDao.queryShopCount - ==> Parameters: 8(Long)
+2018-08-05 20:45:21.481 [main] DEBUG stephen.dao.ShopDao.queryShopCount - <==      Total: 1

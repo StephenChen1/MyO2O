@@ -4,6 +4,24 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="stephen.dao.ShopDao">
 
+	<resultMap type="shop" id="shopMap">
+		<id column = "id" property = "id"/>
+		<result column = "name" property = "name"/>
+		<result column = "description" property = "description"/>
+		<result column = "img" property = "img"/>
+		<result column = "address" property = "address"/>
+		<result column = "phone" property = "phone"/>
+		<result column = "create_time" property = "createTime"/>
+		<result column = "advice" property = "advice"/>
+		<result column = "enable_status" property = "enableStatus"/>
+		<result column = "priority" property = "priority"/>
+		<result column = "last_edit_time" property = "lastEditTime"/>
+		<result column = "owner_id" property = "ownerId"/>
+		<association property="area" column = "area_id" select = "stephen.dao.AreaDao.getAreaById"></association>
+		<association property="shopCategory" column  ="shop_category_id" select ="stephen.dao.ShopCategoryDao.getCategoryById"></association>
+	</resultMap>
+
+
 	<!-- 插入店铺，并得到店铺id -->
 	<insert id="insertShop" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
 		insert into tb_shop
@@ -33,5 +51,95 @@
 	    where id = #{id}
 	</update>
 	
+	<!-- 查询店铺消息，有店铺id则返回该店铺，否则返回全部 -->
+	<select id="queryShop" resultMap = "shopMap">
+		SELECT 
+			id, name, img, description, address,
+			phone, create_time, advice, enable_status, priority,
+			last_edit_time, owner_id, area_id, shop_category_id
+		FROM
+		   tb_shop
+		<where>
+			<!-- 不知为何，这里要用_parameter来表示，不能用shopId -->
+			<if test="_parameter != null">
+				and id = #{shopId}
+			</if>
+		</where>
+	</select>
+
+	<!-- 查询店铺列表 -->
+	<select id="queryShopList" resultMap = "shopMap">
+		SELECT
+			id, name, img, description, address,
+			phone, create_time, advice, enable_status, priority,
+			last_edit_time, owner_id, area_id, shop_category_id
+		FROM
+			tb_shop
+		<where>
+			<!-- 店铺主 -->
+			<if test="shopCondition.ownerId != null">
+			  and owner_id = #{shopCondition.ownerId}
+			</if>
+			<!-- 区域 -->
+			<if test="shopCondition.area != null and shopCondition.area.id != null">
+			  and  area_id= #{shopCondition.area.id}
+			</if>
+			<!-- 店铺类别 -->
+			<if test="shopCondition.shopCategory != null and shopCondition.shopCategory.id != null">
+			  and shop_category_id = #{shopCondition.category.id}
+			</if>
+			<!-- 对名称进行模糊查找 -->
+			<if test="shopCondition.name != null and shopCondition.name !='' ">
+			  and  name like concat('%',#{shopCondition.name},'%')
+			</if>
+			<!-- 店铺状态 -->
+			<if test="shopCondition.enableStatus != null">
+			  and  enable_status= #{shopCondition.enableStatus}
+			</if>
+			<!-- 店铺描述模糊查找 -->
+			<if test="shopCondition.description != null and shopCondition.description != '' ">
+			  and  description like concat('%',#{shopCondition.description},'%')
+			</if>
+		</where>
+		ORDER BY
+			priority DESC
+		LIMIT 
+			#{rowIndex},#{pageSize}
+	</select>
+	
+	
+	<!-- 查询符合条件的所有店铺总数 -->
+	<select id="queryShopCount" resultType = "Integer">
+	     SELECT 
+	     	count(1)
+	     FROM
+	     	tb_shop
+	     <where>
+			<!-- 店铺主 -->
+			<if test="shopCondition.ownerId != null">
+			  and owner_id = #{shopCondition.ownerId}
+			</if>
+			<!-- 区域 -->
+			<if test="shopCondition.area != null and shopCondition.area.id != null">
+			  and  area_id= #{shopCondition.area.id}
+			</if>
+			<!-- 店铺类别 -->
+			<if test="shopCondition.shopCategory != null and shopCondition.shopCategory.id != null">
+			  and shop_category_id = #{shopCondition.category.id}
+			</if>
+			<!-- 对名称进行模糊查找 -->
+			<if test="shopCondition.name != null and shopCondition.name !='' ">
+			  and  name like concat('%',#{shopCondition.name},'%')
+			</if>
+			<!-- 店铺状态 -->
+			<if test="shopCondition.enableStatus != null">
+			  and  enable_status= #{shopCondition.enableStatus}
+			</if>
+			<!-- 店铺描述模糊查找 -->
+			<if test="shopCondition.description != null and shopCondition.description != '' ">
+			  and  description like concat('%',#{shopCondition.description},'%')
+			</if>
+		</where>
+	</select>
 
 </mapper>
