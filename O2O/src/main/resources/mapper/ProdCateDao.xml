@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="stephen.dao.ProdCateDao">
+
+	<!-- 查询店铺下的所有商品类别 -->
+	<select id="queryProdCateByShopId" resultType = "productCategory">
+		SELECT
+			id , name , priority , description , 
+			shop_id , create_time , last_edit_time
+		FROM
+			tb_product_category
+		WHERE
+			shop_id = #{shopId}
+		ORDER BY 
+		    priority
+		DESC 
+	</select>
+
+	
+	<!-- 批量插入商品类别 parameterType="java.util.List"-->
+	<insert id="batchInsertProdCate" >
+		INSERT INTO
+		 	tb_product_category (name , priority , shop_id ,create_time ,last_edit_time)
+		 VALUES
+		 	<foreach collection="list" item="productCategory" index="index"
+		 	   separator=",">
+		 		(
+		 	      #{productCategory.name},
+		 	      #{productCategory.priority},
+		 	      #{productCategory.shopId},
+		 	      NOW(),
+		 	      NOW()
+		 		)
+		 	</foreach>
+	</insert>
+
+	<!-- 删除某个商品类别 -->
+	<delete id="deleteProdCate">
+		DELETE FROM
+			tb_product_category
+		WHERE
+		    id = #{pcId} and shop_id = #{shopId}
+	</delete>
+	
+</mapper>

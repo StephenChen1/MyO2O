@@ -9,12 +9,18 @@ public class ProductCategory {
 	private Long id ;
 	//类别名称
 	private String name ;
+	//简介
+	private String description;
 	//权重
 	private Integer priority ;
 	//所属店铺id
 	private Long shopId ;
 	//创建时间
 	private Date createTime ;
+	//修改时间
+	private Date lastEditTime ;
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -32,6 +38,19 @@ public class ProductCategory {
 	}
 	public void setPriority(Integer priority) {
 		this.priority = priority;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public Date getLastEditTime() {
+		return lastEditTime;
+	}
+	public void setLastEditTime(Date lastEditTime) {
+		this.lastEditTime = lastEditTime;
 	}
 	public Long getShopId() {
 		return shopId;

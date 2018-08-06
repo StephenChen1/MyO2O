@@ -76,7 +76,7 @@ $(document).ready(function(){
 	$(document).on('click','.shopOper',function(){
 		//得到操作的店铺id
 		var shopId = $(this).attr('id');
-		alert(shopId);
+		//alert(shopId);
 		//带参数跳转
 		var url = "../shopUI/shopOperation?shopId="+shopId ;
 		
